@@ -46,7 +46,8 @@ create table objectif_utilisateur (
 -- REGIME
 create table plat(
     id int primary key auto_increment,
-    nom varchar(30)
+    nom varchar(30),
+    prix decimal(7,2)
 );
 
 create table activites(
