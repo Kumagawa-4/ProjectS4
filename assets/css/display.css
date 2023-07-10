@@ -1,0 +1,29 @@
+.exercice{
+    width: 8cm;
+    height: 2cm;
+    text-align: center;
+    
+}
+.exercice th{
+    text-align: center;
+    background-color: rgb(211, 211, 211);
+    border: 1px white solid;
+}
+
+.logoDisplay{
+    margin-top: 0.5cm;
+    width: 170px;
+    height: 170px;
+    
+}
+.logoDisplay img{
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+}
+.titre{
+    margin-top: 2cm;
+}
+.container{
+    margin-bottom: 1cm;
+}
