@@ -49,7 +49,7 @@ create table plat(
     nom varchar(30)
 );
 
-create table activites(
+create table activities(
     id int primary key auto_increment,
     nom varchar(30)
 );
