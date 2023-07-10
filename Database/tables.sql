@@ -8,7 +8,8 @@ create table utilisateur (
     nom varchar(50),
     prenom varchar(50),
     email varchar(50),
-    admin integer
+    mdp varchar(20),
+    is_admin integer
 );
 
 create table genre (
@@ -17,12 +18,13 @@ create table genre (
 );
 
 CREATE TABLE details (
-    idUtilisateur INTEGER PRIMARY KEY auto_increment,
+    idUtilisateur INTEGER,
     idGenre INTEGER,
     taille DECIMAL(10,2),
     poids DECIMAL(10,2),
     monnaie DECIMAL(10,2),
-    FOREIGN KEY (idGenre) REFERENCES genre(id)
+    FOREIGN KEY (idGenre) REFERENCES genre(id),
+    FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id)
 );
 
 
@@ -41,60 +43,42 @@ create table objectif_utilisateur (
     foreign key (idObjectif) references objectif(id)
 );
 
-
-
---  SAKAFO
-
-create table sakafo (
-    id integer primary key auto_increment,
-    nom varchar(50)
+-- REGIME
+create table plat(
+    id int primary key auto_increment,
+    nom varchar(30)
 );
 
-create table menu (
-    id integer primary key auto_increment,
-    nom varchar(50)
+create table activites(
+    id int primary key auto_increment,
+    nom varchar(30)
 );
 
-create table composant_menu (
-    id integer primary key auto_increment,
-    idMenu integer,
-    idSakafo integer,
-    foreign key (idMenu) references menu(id),
-    foreign key (idSakafo) references sakafo(id)    
+create table regime(
+    id int primary key auto_increment,
+    duree int,
+    typeRegime int,
+    poids int
 );
 
-
-
--- ACTIVITE SPORTIVE
-
-create table activite_sportive (
-    id integer primary key auto_increment,
-    nom varchar(50)
+create table detailsActivites(
+    id int primary key auto_increment,
+    idActivite int,
+    frequence int,
+    periode int,
+    idRegime int,
+    foreign key (idActivite) references activites(id),
+    foreign key (idRegime) references regime(id)
 );
 
-create table activite (
-    id integer primary key auto_increment,
-    nom varchar(20)
-);
-
-create table composant_activite (
-    id integer primary key auto_increment,
-    idActivite integer,
-    idActiviteSportive integer,
-    foreign key (idActivite) references activite(id),
-    foreign key (idActiviteSportive) references activiteSportive(id)
-);
-
-
---  REGIME
-
-create table regime (
-    id integer primary key auto_increment,
-    idMenu integer,
-    idActivite integer,
-    duree timestamp,
-    foreign key (idActivite) references activite(id),
-    foreign key (idMenu) references menu(id)        
+create table menu(
+    id int primary key auto_increment,
+    idPlat int,
+    frequence int,
+    periode int,
+    idRegime int,
+    foreign key (idPlat) references plat(id),
+    foreign key (idRegime) references regime(id)
 );
 
 
