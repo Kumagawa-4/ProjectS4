@@ -18,12 +18,13 @@ create table genre (
 );
 
 CREATE TABLE details (
-    idUtilisateur INTEGER PRIMARY KEY auto_increment,
+    idUtilisateur INTEGER,
     idGenre INTEGER,
     taille DECIMAL(10,2),
     poids DECIMAL(10,2),
     monnaie DECIMAL(10,2),
-    FOREIGN KEY (idGenre) REFERENCES genre(id)
+    FOREIGN KEY (idGenre) REFERENCES genre(id),
+    FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(id)
 );
 
 
