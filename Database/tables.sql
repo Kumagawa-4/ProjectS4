@@ -8,6 +8,7 @@ create table utilisateur (
     nom varchar(50),
     prenom varchar(50),
     email varchar(50),
+    mdp varchar(20),
     admin integer
 );
 
