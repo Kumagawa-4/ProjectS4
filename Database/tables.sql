@@ -9,7 +9,7 @@ create table utilisateur (
     prenom varchar(50),
     email varchar(50),
     mdp varchar(20),
-    admin integer
+    is_admin integer
 );
 
 create table genre (
