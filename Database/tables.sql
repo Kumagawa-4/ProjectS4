@@ -87,6 +87,16 @@ create table menu(
 create table code (
     id integer primary key auto_increment,
     numero varchar(50),
-    status integer,
+    status integer,  -- utilisé : 1  / non utilisé : 0
     montant decimal(10,2)
+);
+
+create table validation_code (
+    id integer primary key auto_increment,
+    id_code integer,
+    id_user integer,
+    date date,
+    valide integer, -- 0 : pas encore validé / 1 : validé / -1 : refusé
+    foreign key (id_code) references code(id),    
+    foreign key (id_user) references user(id)    
 );

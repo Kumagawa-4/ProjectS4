@@ -45,7 +45,7 @@
         </form>
       </div>
       <!-- /.card -->
-
+    <a href="<?php echo site_url('index.php/Code_controller') ?>">view list Code</a>
     </div>
 
   </body>
