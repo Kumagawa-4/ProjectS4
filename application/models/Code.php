@@ -10,13 +10,12 @@
             return $query -> row();
         }
 
-        public function entrerCode($numero){
+        public function entrerCode($numero, $idUser){
             $code = $this -> select_code_by_num($numero);
             if($code == null || $code->status == 1){ 
                 return false; 
             }
-            $idUser = $this->session->userdata('userid');
-            $query = sprintf("INSERT into validation_code (id_code, id_user, date) values (%d, %d, now())", $code->id, $idUser);
+            $query = sprintf("INSERT into validation_code (id_code, id_user, date, valide) values (%d, %d, now(), 0)", $code->id, $idUser);
             $this->db->query($query);
         }
 
@@ -43,7 +42,7 @@
         }
 
         public function valider_code($idvalidation, $idcode){
-            $query = sprintf("UPDATE validation_code set valide = 1 where id_code = %d", $idvalidation);
+            $query = sprintf("UPDATE validation_code set valide = 1 where id = %d", $idvalidation);
             $this->db->query($query);
             $query = sprintf("UPDATE code set status = 1 where id = %d", $idcode);
             $this->db->query($query);
@@ -63,10 +62,10 @@
             $this->db->query($sql);
         }
 
-        //  REFUSER
-        function refuser ($id){
-            $query = sprintf("UPDATE validation_code set valide = -1 where id_code = %d", $id);
-            $this->db->query($query);
-        }
+        // //  REFUSER
+        // function refuser ($id){
+        //     $query = sprintf("UPDATE validation_code set valide = -1 where id = %d", $id);
+        //     $this->db->query($query);
+        // }
     }
 

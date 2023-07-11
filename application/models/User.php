@@ -17,7 +17,7 @@
             $query = "INSERT INTO utilisateur (nom, prenom, email, mdp, is_admin) VALUES(%s, %s, %s, %s, %d)";
             $query = sprintf($query, $this->db->escape($nom), $this->db->escape($prenom), $this->db->escape($email), $this->db->escape($mdp), $isAdmin);
             $this->db->query($query);
-            return $this->login($nom, $pass);
+            return $this->login($nom, $mdp);
         }
     }
 ?>

@@ -22,7 +22,9 @@ class Code_controller extends CI_Controller{
         $error = '';
         $num = $this->input->post('num');
         
-        if($this->Code->entrerCode($num) === false){
+        //$idUser = $this->session->userdata('userid');
+        $idUser = $_SESSION['idUser'];
+        if($this->Code->entrerCode($num, $idUser) === false){
             $error = 'Code invalid';
         }
         redirect('Code_controller/entrerCode_index/'. $error);
@@ -45,8 +47,8 @@ class Code_controller extends CI_Controller{
         redirect('index.php/Code_controller/listCode');
     }
 
-    function refuser($id){
-        $this->Code->refuser($id);
-        redirect('index.php/Code_controller/listCode');
-    }
+    // function refuser($id){
+    //     $this->Code->refuser($id);
+    //     redirect('index.php/Code_controller/listCode');
+    // }
 }

@@ -23,7 +23,8 @@ class Log extends CI_Controller {
             redirect('index.php/Welcome');
         }else{
             $session = $check;
-            $this->session->set_userdata('userid',$session);
+            //$this->session->set_userdata('userid',$session);
+            $_SESSION['idUser'] = $session;
             redirect('index.php/Home_controller');
         }
     }

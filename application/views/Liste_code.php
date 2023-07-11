@@ -37,7 +37,6 @@
                                         <td><?php echo $codes[$i]['montant'] ?></td>
                                         <td><?php echo $codes[$i]['nom'] ?></td>
                                         <td><a href="<?php echo site_url('index.php/Code_controller/valider/' . $codes[$i]['id_code']) ?>"><button type="button" class="btn btn-block btn-info">Valider</button></a></td>
-                                        <td><a href="<?php echo site_url('index.php/Code_controller/refuser/' . $codes[$i]['id_code']) ?>"><button type="button" class="btn btn-block btn-danger">Refuser</button></a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

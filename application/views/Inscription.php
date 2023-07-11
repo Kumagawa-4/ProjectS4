@@ -8,66 +8,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/dist/css/adminlte.min.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/style.css') ?>">
     <title>Login</title>
   </head>
 
-  <body>
-    <div class="container">
-        <!-- Horizontal Form -->
-      <div class="card card-info">
-        <div class="card-header">
-          <h1 class="card-title">Inscription</h1>
-        </div>
-        <!-- /.card-header -->
-        <!-- form start -->
-        <form class="form-horizontal" action=<?php echo site_url('index.php/Log/inscription'); ?>  method="post">
-          <div class="card-body">
-            <div class="form-group row">
-              <label for="inputText" class="col-sm-2 col-form-label">Nom</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="nom" placeholder="Nom">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputText" class="col-sm-2 col-form-label">Prenom</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="prenom" placeholder="Prenom">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputText" class="col-sm-2 col-form-label">Email</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" name="email" placeholder="Email">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" name="pass" placeholder="Password">
-              </div>
-            </div>
-            <div class="form-group row">
-                <div class="offset-sm-2 col-sm-10">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="isAdmin">
-                        <label class="form-check-label" for="isAdmin">Admin</label>
-                    </div>
-                </div>
-            </div>
-          </div>
-          <!-- /.card-body -->
-          <div class="card-footer">
-            <button type="submit" class="btn btn-info float-right">Sign up</button>
-            <button type="submit" class="btn btn-default float-left">Cancel</button>
-          </div>
-          <!-- /.card-footer -->
-        </form>
+  <body class="hold-transition register-page">
+    <div class="register-box">
+      <div class="register-logo">
+        <a href="../../index2.html"><b>Admin</b>LTE</a>
       </div>
-      <!-- /.card -->
 
+      <div class="card floating-box">
+        <div class="card-body register-card-body">
+          <p class="login-box-msg">Register a new membership</p>
+
+          <form action=<?php echo site_url('index.php/Log/inscription'); ?>  method="post">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="nom" placeholder="Nom">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="prenom" placeholder="Prenom">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-user"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="email" placeholder="Email">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" class="form-control" name="pass" placeholder="Password">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-8">
+                <div class="icheck-primary">
+                  <input type="checkbox" id="agreeTerms" name="isAdmin" value="agree">
+                  <label for="agreeTerms">
+                    Admin
+                  </label>
+                </div>
+              </div>
+              <a href="<?php echo site_url('Log/index') ?>" class="text-center">I already have a membership</a>
+              <!-- /.col -->
+              <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+
+        </div>
+        <!-- /.form-box -->
+      </div><!-- /.card -->
     </div>
+    <!-- /.register-box -->
 
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
   </body>
+    
 </html>
 
 
