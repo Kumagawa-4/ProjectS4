@@ -90,4 +90,52 @@ create table code (
     numero varchar(50),
     status integer,
     montant decimal(10,2)
+<<<<<<< Updated upstream
+=======
+);
+
+create table validation_code (
+    id integer primary key auto_increment,
+    id_code integer,
+    id_user integer,
+    date date,
+    valide integer, -- 0 : pas encore validé / 1 : validé / -1 : refusé
+    foreign key (id_code) references code(id),    
+    foreign key (id_user) references user(id)    
+);
+
+
+create table historique (
+    id integer primary key auto_increment,
+    idUtilisateur int,
+    Montant int,
+    date_du_jour date 
+);
+
+--  CODE
+
+create table code (
+    id integer primary key auto_increment,
+    numero varchar(50),
+    status integer,  -- utilisé : 1  / non utilisé : 0
+    montant decimal(10,2)
+);
+
+create table validation_code (
+    id integer primary key auto_increment,
+    id_code integer,
+    id_user integer,
+    date date,
+    valide integer, -- 0 : pas encore validé / 1 : validé / -1 : refusé
+    foreign key (id_code) references code(id),    
+    foreign key (id_user) references user(id)    
+);
+
+
+create table historique (
+    id integer primary key auto_increment,
+    idUtilisateur int,
+    Montant int,
+    date_du_jour date 
+>>>>>>> Stashed changes
 );

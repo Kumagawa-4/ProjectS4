@@ -1,0 +1,108 @@
+body {
+  background-color: #f2f2f2;
+}
+a{     
+  text-decoration: none;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 20px;
+  width: 400px;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"] {
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.annuler{
+  background-color: rgb(207, 203, 203); 
+  cursor: pointer;  
+  border: none;
+  color: white; 
+  font-size: 16px;     
+  margin-left: 10px; 
+  border-radius: 3px;
+  font-weight: bold;   
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+.annuler:hover{
+  background-color: rgb(170, 167, 167); 
+}
+
+select {
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  color: #555;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 8px 4px;
+}
+
+
+select:focus {
+  outline: none;
+}
+
+select option {
+  background-color: #f5f5f5;
+  color: #555;
+}
+
