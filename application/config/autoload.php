@@ -87,7 +87,7 @@ $autoload['drivers'] = array();
 | -------------------------------------------------------------------
 | Prototype:
 |
-|*/	$autoload['helper'] = array('url', 'file','upload');
+|*/	$autoload['helper'] = array('url', 'file','upload', 'form');
 
 // $autoload['helper'] = array();
 
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('User', 'Code');
+$autoload['model'] = array('User', 'Code', 'Stat');

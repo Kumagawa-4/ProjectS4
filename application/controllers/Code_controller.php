@@ -12,9 +12,11 @@ class Code_controller extends CI_Controller{
     }
 
     public function entrerCode_index($error = ''){
+        $idUser = $_SESSION['idUser'];
+        $dataHeader['user'] = $this->User->getUserById($idUser);
         $data['codes'] = $this->Code->get_list_code_non_utilise();
         $data['error'] = $error;
-        $this->load->view('header.php');
+        $this->load->view('header.php', $dataHeader);
         $this->load->view('entrer_code.php', $data);
     }
 

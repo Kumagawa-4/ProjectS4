@@ -1,7 +1,11 @@
 .floating-box{
-  background-color: rgba(255, 255, 255, 0.512);
+  padding: 1cm;
+  background-color: rgba(255, 255, 255, 0.642);
   border-radius: 10px;
-  box-shadow: 1px 1px 10px rgb(189, 189, 189);
+}
+
+.floating-box button{
+  width: 100%;
 }
 
 body{
@@ -9,3 +13,5 @@ body{
   background-repeat: no-repeat;
   background-position: center;
 }
+
+

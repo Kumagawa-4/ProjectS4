@@ -19,7 +19,6 @@
       </div>
 
       <div class="card floating-box">
-        <div class="card-body register-card-body">
           <p class="login-box-msg">Register a new membership</p>
 
           <form action=<?php echo site_url('index.php/Log/inscription'); ?>  method="post">
@@ -56,26 +55,13 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-8">
-                <div class="icheck-primary">
-                  <input type="checkbox" id="agreeTerms" name="isAdmin" value="agree">
-                  <label for="agreeTerms">
-                    Admin
-                  </label>
-                </div>
-              </div>
               <a href="<?php echo site_url('Log/index') ?>" class="text-center">I already have a membership</a>
-              <!-- /.col -->
-              <div class="col-4">
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
-              </div>
-              <!-- /.col -->
+              <button type="submit" class="btn  bg-gradient-info">Register</button>
             </div>
           </form>
 
         </div>
         <!-- /.form-box -->
-      </div><!-- /.card -->
     </div>
     <!-- /.register-box -->
 

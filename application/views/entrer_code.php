@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/plugins/fontawesome-free/css/all.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/dist/css/adminlte.min.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/page_style.css') ?>">
     <title>Document</title>
 </head>
 <body>
-    <div class="content-wrapper">
+  <div class="content-wrapper">
+    <div class="entree-code">
         <div class="container">
             <div class="card card-primary">
               <div class="card-header">
@@ -32,13 +34,25 @@
 
             <div class="container-wrapper">
               <h3>Liste de codes</h3>
-              <ul>
-                <?php for($i=0; $i<count($codes); $i++){ ?>
-                  <p><?php echo $codes[$i]['numero'] ?></p>
-                <?php } ?>
-              </ul>
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Numero</th>
+                    <th>Valeur</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php for($i=0; $i<count($codes); $i++){ ?>
+                    <tr>
+                      <td><?php echo $codes[$i]['numero'] ?></td>
+                      <td><?php echo $codes[$i]['montant'] ?></td>
+                    </tr>
+                  <?php } ?>
+                </tbody>
+              </table>
             </div>
         </div>
     </div>
+  </div>
 </body>
 </html>

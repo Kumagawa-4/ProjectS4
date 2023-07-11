@@ -19,12 +19,11 @@
       </div>
       <!-- /.login-logo -->
       <div class="card floating-box">
-        <div class="card-body login-card-body">
           <p class="login-box-msg">Sign in to start your session</p>
 
           <form class="form-horizontal" action=<?php echo site_url('Log/verifyLogin'); ?>  method="post">
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Nom"  name="nom" >
+              <input type="text" class="form-control" placeholder="Nom"  name="nom"  value="Doe">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-envelope"></span>
@@ -32,7 +31,7 @@
               </div>
             </div>
             <div class="input-group mb-3">
-              <input type="password" class="form-control" name="pass" placeholder="Password">
+              <input type="password" class="form-control" name="pass" placeholder="Password" value="password123">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-lock"></span>
@@ -43,19 +42,14 @@
               <a href="<?php echo site_url('Log/inscription_index') ?>" class="text-center">Register a new membership</a>
             </p>
             <div class="row">
-              <!-- /.col -->
-              <div class="col-4">
-                <button type="submit" class="btn btn-info">Sign in</button>
-              </div>
-              <!-- /.col -->
+                <button type="submit" class="btn bg-gradient-info">Sign in</button>
             </div>
           </form>
 
-        </div>
-        <!-- /.login-card-body -->
       </div>
     </div>
     <a href="<?php echo site_url('index.php/Code_controller') ?>">view list Code</a>
+    <a href="<?php echo site_url('index.php/Tableau_bord_controller') ?>">view Dashboard</a>
 </body>
 </html>
 
