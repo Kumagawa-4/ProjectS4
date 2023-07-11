@@ -23,13 +23,15 @@ class Log extends CI_Controller {
             redirect('index.php/Welcome');
         }else{
             $session = $check;
-            $this->session->set_userdata('userid',$session);
+            session_set_cookie_params(86400);
+            session_start();
+            $_SESSION['idUser'] = $session;
             redirect('index.php/Home_controller');
         }
     }
 
     public function logout(){
-        $this->session->unset_userdata('userid');
+        session_destroy();
         redirect('index.php/Log/login');
     }
 
@@ -42,16 +44,14 @@ class Log extends CI_Controller {
         $prenom = $this->input->post('prenom');
         $mdp = $this->input->post('pass');
         $email = $this->input->post('email');
-        $admin = 0;
-        if($this->input->post('isAdmin')){
-            $admin = 1;
-        }
-        $check = $this->User->newUser($nom, $prenom, $email, $mdp, $admin);
+        $check = $this->User->newUser($nom, $prenom, $email, $mdp);
         if($check === false){
             redirect('index.php/Welcome');
         }else{
             $session = $check;
-            $this->session->set_userdata('userid',$session);
+            session_set_cookie_params(86400);
+            session_start();
+            $_SESSION['idUser'] = $session;
             redirect('index.php/Home_controller');
         }
     }
